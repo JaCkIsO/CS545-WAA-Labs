@@ -1,0 +1,8 @@
+
+*.docx
+*.zip
+*.class
+*.jar
+*.iml
+*/.idea
+*/target
