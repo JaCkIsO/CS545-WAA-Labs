@@ -1,7 +1,6 @@
 package edu.miu.service;
 
 import edu.miu.domain.Post;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
