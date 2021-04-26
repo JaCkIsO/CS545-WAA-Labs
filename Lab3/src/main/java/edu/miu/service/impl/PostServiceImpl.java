@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -16,21 +18,21 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getAll() {
-        return postRepository.getAll();
+        return StreamSupport.stream(postRepository.findAll().spliterator(), false).collect(Collectors.toList());
     }
 
     @Override
     public Post getById(long id) {
-        return postRepository.getById(id);
+        return postRepository.findById(id).get();
     }
 
     @Override
-    public boolean save(Post post) {
+    public Post save(Post post) {
         return postRepository.save(post);
     }
 
     @Override
-    public boolean deleteById(long id) {
-        return postRepository.deleteById(id);
+    public void deleteById(long id) {
+        postRepository.deleteById(id);
     }
 }

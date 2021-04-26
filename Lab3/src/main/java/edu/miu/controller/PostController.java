@@ -23,11 +23,11 @@ public class PostController {
         return postService.getById(id);
     }
     @PostMapping("/")
-    public boolean save(@RequestBody Post post){
+    public Post save(@RequestBody Post post){
         return postService.save(post);
     }
     @DeleteMapping("/{id}")
-    public boolean deleteById(@PathVariable long id){
-        return postService.deleteById(id);
+    public void deleteById(@PathVariable long id){
+        postService.deleteById(id);
     }
 }
