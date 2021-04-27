@@ -15,19 +15,22 @@ public class PostController {
     PostService postService;
 
     @GetMapping("/")
-    public List<Post> getAll(){
+    public List<Post> getAll() {
         return postService.getAll();
     }
+
     @GetMapping("/{id}")
-    public Post getById(@PathVariable long id){
+    public Post getById(@PathVariable long id) {
         return postService.getById(id);
     }
+
     @PostMapping("/")
-    public Post save(@RequestBody Post post){
+    public Post save(@RequestBody Post post) {
         return postService.save(post);
     }
+
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable long id){
+    public void deleteById(@PathVariable long id) {
         postService.deleteById(id);
     }
 }
