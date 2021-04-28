@@ -15,8 +15,12 @@ import java.util.stream.StreamSupport;
 @Transactional
 public class PostServiceImpl implements PostService {
 
-    @Autowired
     PostRepository postRepository;
+
+    @Autowired
+    public PostServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @Override
     public List<Post> getAll() {
