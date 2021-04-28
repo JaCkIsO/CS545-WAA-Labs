@@ -11,8 +11,12 @@ import java.util.List;
 @RequestMapping("/posts")
 public class PostController {
 
-    @Autowired
     PostService postService;
+
+    @Autowired
+    public PostController(PostService postService) {
+        this.postService = postService;
+    }
 
     @GetMapping("/")
     public List<Post> getAll() {
