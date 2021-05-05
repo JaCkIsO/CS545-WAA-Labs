@@ -1,0 +1,8 @@
+.student {
+    display: inline-block;
+    background-color: lightblue;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    margin: 10px;
+}
